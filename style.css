@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: #22254b;
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    background-color: #373b69;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header span{
+    margin-top: 7px;
+    margin-left: 7px;
+    font-size: 20px;
+    color:  #8286bd;
+}
+
+header .me{
+    color: white;
+    white-space: nowrap;
+}
+
+.search{
+    background-color: transparent;
+    border-radius: 50px;
+    color: #eee;
+    border: 2px solid #22254b;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.search::placeholder{
+    color: #7378c5;
+}
+
+.search:focus{
+    outline: none;
+    background-color: #22254b;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie{
+    position: relative;
+    overflow: hidden;                       /* (used when the content is larger than its container) the image is too big to fit in the div, so we use "overflow: hiddin" to hide all pixles outside the div */
+    background-color: #373b69;
+    border-radius: 7px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 1rem;
+}
+
+.movie img{
+    width: 100%;
+    height: 539px;
+}
+
+.movie-info{
+    color: #eee;
+    display: flex;                          /* this will allow you to display children in the way you want (flexible) */
+    align-items: center;
+    justify-content: space-between;         /* flex will allow this to work, how do you want to put your children */
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    height: 82px;
+}
+
+.movie-info span{
+    background-color: #22254b;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{
+    color: rgb(39,189,39)
+}
+.movie-info span.orange{
+    color: orange;
+}
+.movie-info span.red{
+    color: rgb(189,42,42);
+}
+
+.overview{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.85;
+    padding: 2rem;
+
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+
+    max-height: 100%;
+    overflow: auto;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+
+
+/**/
+
+@media screen and (max-width:700px){
+    .me{
+        display: block;
+    }
+}
